@@ -2,19 +2,21 @@
   "name": "superpowers-dev",
   "description": "Development marketplace for Superpowers core skills library",
   "owner": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "Felix",
+    "url": "https://github.com/Felix-bin"
   },
   "plugins": [
     {
       "name": "superpowers",
       "description": "Core skills library for Muse: TDD, debugging, collaboration patterns, and proven techniques",
-      "version": "6.4.1",
+      "version": "1.0.0",
       "source": "./",
       "author": {
-        "name": "Jesse Vincent",
-        "email": "jesse@fsck.com"
-      }
+        "name": "Felix",
+        "url": "https://github.com/Felix-bin"
+      },
+      "homepage": "https://github.com/Felix-bin/MySuperpowers",
+      "repository": "https://github.com/Felix-bin/MySuperpowers"
     }
   ]
 }

@@ -76,7 +76,36 @@ cd MySuperpowers
 %USERPROFILE%\.agents\skills\
 ```
 
-### Claude Code、Cursor 和兼容插件的客户端
+### Claude Code
+
+在 Claude Code 中添加本仓库提供的 marketplace：
+
+```text
+/plugin marketplace add Felix-bin/MySuperpowers
+```
+
+然后安装插件：
+
+```text
+/plugin install mysuperpowers@mysuperpowers-marketplace
+```
+
+安装后，技能使用 `mysuperpowers` 命名空间：
+
+```text
+/mysuperpowers:writing-plans
+/mysuperpowers:systematic-debugging
+/mysuperpowers:brainstorming
+```
+
+获取新版本时，先刷新 marketplace，再更新插件：
+
+```text
+/plugin marketplace update mysuperpowers-marketplace
+/plugin update mysuperpowers@mysuperpowers-marketplace
+```
+
+### Cursor 和其他兼容插件的客户端
 
 从本地目录安装插件，或让客户端加载仓库内的 `.claude-plugin`、`.cursor-plugin` 和 `skills/`。本版本的启动钩子为空，不会注入完整工作流。
 
@@ -112,10 +141,16 @@ hermes plugins install Felix-bin/MySuperpowers --enable
 
 ## 使用示例
 
-显式指定技能：
+在支持自然语言调用技能的客户端中，可以显式指定技能：
 
 ```text
 使用 writing-plans，为这个功能写一个简短的实施大纲。
+```
+
+在 Claude Code 中，也可以直接调用带命名空间的技能：
+
+```text
+/mysuperpowers:writing-plans
 ```
 
 输出会聚焦于任务和验收条件：
@@ -147,6 +182,9 @@ hermes plugins install Felix-bin/MySuperpowers --enable
 | 执行衔接 | 依赖详细实施计划 | 执行时补齐当前任务细节 |
 | 会话诊断 | 提供 `diagnosing-superpowers` | 已移除 |
 | 技能调用 | 自动引导为主 | 用户选择与技能自身触发并存 |
+
+Claude Code 插件标识为 `mysuperpowers`，marketplace 标识为
+`mysuperpowers-marketplace`，可以与原版 `superpowers` 并存。
 
 ## 验证
 
