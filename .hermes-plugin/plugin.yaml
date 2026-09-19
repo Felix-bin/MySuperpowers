@@ -1,0 +1,5 @@
+name: superpowers
+version: 6.4.1
+description: Superpowers skills for Hermes Agent
+author: obra
+provides_hooks: []
